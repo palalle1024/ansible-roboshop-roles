@@ -1,3 +1,4 @@
 CATALOGUE_HOST: catalogue.palalle.site 
 USER_HOST: user.palalle.site
 CART_HOST: cart.palalle.site
+SHIPPING_HOST: shipping.palalle.site 
