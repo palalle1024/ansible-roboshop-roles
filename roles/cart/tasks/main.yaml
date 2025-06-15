@@ -1,15 +1,18 @@
-- name: app setup 
-  ansible_role: 
+
+
+
+- name: app-setup
+  include_role:
     name: common 
     tasks_from: app-setup 
 
-- name: nodejs setup 
-  ansible_role:
+- name: nodejs-setup 
+  include_role: 
     name: common 
     tasks_from: nodejs-setup 
 
-- name: systemd setup
-  ansible_role: 
-    name: common 
-    tasks_from: systemd
 
+- name: systemd setup 
+  include_role: 
+    name : common 
+    tasks_from: systemd 
