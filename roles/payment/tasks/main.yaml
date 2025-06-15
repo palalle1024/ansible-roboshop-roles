@@ -1,0 +1,14 @@
+- name: App-setup 
+  ansible_role:
+    name: common 
+    tasks_from: app-setup 
+
+- name: payment-setup 
+  ansible_role:
+    name: common 
+    tasks_from: payment-setup 
+  
+- name: systemd setup 
+  ansible_role: 
+    name: common 
+    tasks_from: systemd 

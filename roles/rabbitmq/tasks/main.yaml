@@ -1,0 +1,30 @@
+ 
+  - name: copy repos of "{{ component }}"
+    ansible.builtin.copy: 
+      src: "{{ component }}.repo"
+      dest: /etc/yum.repos.d/{{ component }}.repo 
+  
+  - name: install rabbbitmq 
+    ansible.builtin.dnf: 
+      name: "{{ component }}-server"
+      state: present 
+
+  - name: enable and start service 
+    ansible.builtin.service: 
+      name: "{{ component }}-server"
+      state: started 
+      enabled: yes 
+  
+  - name: create "{{ component }}" user 
+    community.rabbitmq.rabbitmq_user: 
+      user: roboshop 
+      password: roboshop123 
+      permissions: 
+        - vhost: / 
+          configure_priv: .*
+          read_priv: .* 
+          write_priv: .* 
+      state: present 
+
+
+

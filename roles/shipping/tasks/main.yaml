@@ -1,0 +1,31 @@
+- name: app-setup 
+  ansile_role: 
+    name: common 
+    tasks_from: app-setup 
+
+- name: maven setup 
+  ansible_role: 
+    name: common 
+    tasks_from: maven-setup
+
+- name: systemd setup 
+  ansible_role: 
+    name: common 
+    tasks_from: systemd 
+
+
+- name: import data  
+  community.mysql.mysql_db:
+    name: all 
+    login_user: root 
+    login_password: RoboShop@1
+    login_host: mysql.palalle.site 
+    state: import 
+    target: "{{ item }}" 
+  loop: 
+  - /app/db/schema.sql 
+  - /app/db/app-user.sql 
+  - /app/db/master-data.sql 
+  notify: 
+  - restart shipping 
+      

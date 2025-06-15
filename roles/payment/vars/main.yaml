@@ -1,0 +1,3 @@
+CART_HOST: cart.palalle.site 
+USER_HOST: user.palalle.site 
+RABBITMQ_HOST: rabbitmq.palalle.site 
