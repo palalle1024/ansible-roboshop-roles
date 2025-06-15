@@ -1,15 +1,15 @@
 - name: app-setup 
-  ansile_role: 
+  include_role: 
     name: common 
     tasks_from: app-setup 
 
 - name: maven setup 
-  ansible_role: 
+  include_role: 
     name: common 
     tasks_from: maven-setup
 
 - name: systemd setup 
-  ansible_role: 
+  include_role: 
     name: common 
     tasks_from: systemd 
 
