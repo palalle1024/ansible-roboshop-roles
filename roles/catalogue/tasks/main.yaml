@@ -26,7 +26,7 @@
 
 
 - name: print catalogue output
-  ansible.bultin.debug:
+  ansible.builtin.debug:
     msg: "{{ catalogue_output }}"
   ignore_errors: true 
 
@@ -44,7 +44,7 @@
 - name: deployment 
   tags:
   - deployment 
-  import_role: 
+  include_role: 
     name: common 
     tasks_from: deployment 
 
