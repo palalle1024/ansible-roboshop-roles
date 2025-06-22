@@ -22,7 +22,7 @@
 - name: check products loaded or not
   ansible.builtin.command: mongosh --host mongodb.palalle.site  --eval 'db.getMongo().getDBNames().indexOf("catalogue")'
   register: catalogue_output
-  ignor_errors: true 
+  ignore_errors: true 
 
 
 - name: print catalogue output
