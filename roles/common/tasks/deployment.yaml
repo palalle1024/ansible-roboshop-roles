@@ -20,7 +20,7 @@
     remote_src: yes 
 
 - name: downloading the dependencies 
-  commuinty.general.npm:
+  community.general.npm:
     path: /app 
 
 - name: start the service
