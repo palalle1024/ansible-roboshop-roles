@@ -20,7 +20,7 @@
     remote_src: yes 
 
 - name: downloading the dependencies 
-  ansible.commuinty.general.npm:
+  commuinty.general.npm:
     path: /app 
 
 - name: start the service
