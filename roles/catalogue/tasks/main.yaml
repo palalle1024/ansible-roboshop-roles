@@ -42,8 +42,8 @@
     tasks_from: systemd 
 
 - name: deployment 
-  tags:
-  - deployment 
+  # tags:
+  # - deployment 
   import_role: 
     name: common 
     tasks_from: deployment 
