@@ -2,6 +2,6 @@
   become: yes 
   hosts: "{{ component }}"
   vars_files:
-  - vault/mysq.yaml
+  - vault/myss.yaml
   roles:  
   - "{{ component }}"
